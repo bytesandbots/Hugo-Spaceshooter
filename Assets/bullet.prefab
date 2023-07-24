@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7937847115533225673}
   - component: {fileID: 7937847115533225670}
   - component: {fileID: 7937847115533225671}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bullet
-  m_TagString: Untagged
+  m_TagString: Bulet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  bullet: 1
 --- !u!61 &7937847115533225670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -105,7 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7937847116120978138}
   - component: {fileID: 7937847116120978139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pixil-frame-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
