@@ -38,11 +38,11 @@ public class health : MonoBehaviour
     {
         if (tag == "Enemy") {
             if (collision.gameObject.tag == "Player") {
-                TakeDamage(5);
+                TakeDamage(7);
             }
-            if (collision.gameObject.tag == "Bullet") {
+            if (collision.gameObject.tag == "Bulet") {
                 Destroy(collision.gameObject);
-                TakeDamage(1);
+                TakeDamage(4);
             }
         }
         if (tag == "BOSS")
@@ -51,7 +51,7 @@ public class health : MonoBehaviour
             {
                 TakeDamage(5);
             }
-            if (collision.gameObject.tag == "Bullet")
+            if (collision.gameObject.tag == "Bulet")
             {
                 Destroy(collision.gameObject);
                 TakeDamage(1);

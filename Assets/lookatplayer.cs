@@ -17,7 +17,7 @@ public class lookatplayer : MonoBehaviour
     {
         if (target == null)
         {
-            Destroy(gameObject);
+            return;
         }
         else {
             Vector3 dir = target.position - transform.position;

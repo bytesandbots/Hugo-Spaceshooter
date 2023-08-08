@@ -7,6 +7,7 @@ public class playermovement : MonoBehaviour
 {
 
     public float speed = 5;
+    public float rotateSpeed = 270;
     public float shipBoundaryRadius = .5f;
     // Start is called before the first frame update
     void Start()
@@ -19,8 +20,14 @@ public class playermovement : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(h, v, 0);
+        Vector3 movement = new Vector3(0, v, 0);
         transform.Translate(movement * speed * Time.deltaTime);
+
+        
+        Vector3 rot = new Vector3(0, 0, -h);
+        transform.Rotate(rot * rotateSpeed * Time.deltaTime);
+
+
         Vector3 pos = transform.position;
         if (pos.y + shipBoundaryRadius > Camera.main.orthographicSize)
         {
