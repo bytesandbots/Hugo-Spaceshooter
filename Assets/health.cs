@@ -10,6 +10,20 @@ public class health : MonoBehaviour
     private float curenthealth;
     public Image HealthBar;
 
+
+
+    public void Heal(float amount)
+    {
+        curenthealth = curenthealth + amount;
+        if (tag == "Player")
+        {
+            HealthBar.fillAmount = curenthealth / overallhealth;
+        }
+        if (curenthealth > overallhealth)
+        {
+            curenthealth = overallhealth;
+        }
+    }
     public void TakeDamage(float damage) { 
         curenthealth =curenthealth - damage;
         if (tag == "Player")

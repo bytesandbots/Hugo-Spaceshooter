@@ -43,7 +43,12 @@ public class EnemySpawner : MonoBehaviour
                 offset.z = 0;
 
                 offset = offset.normalized * spawnDistance;
-
+                if(wave%15 == 0 && wave != 0){
+                    Instantiate(BossPrefab, transform.position + offset, Quaternion.identity);
+                    currentEnemies = EnemiesToSpawn;
+                    waveStarted = true;
+                    return;
+                }
                 Instantiate(enemyPrefab, transform.position + offset, Quaternion.identity);
                 currentEnemies++;
                 enemiesLeft.text = "Enemies x " + currentEnemies.ToString();
