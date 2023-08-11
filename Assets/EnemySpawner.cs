@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
@@ -18,6 +19,8 @@ public class EnemySpawner : MonoBehaviour
     int currentEnemies;
     bool waveStarted;
     bool waiting;
+    public int BossKilled;
+   
     private void Start()
     {
         waveText.text = "Wave " + wave.ToString();
@@ -26,6 +29,11 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(BossKilled == 0)
+        {
+            SceneManager.LoadScene("you win");
+
+        }
         if (waiting) { return; }
         if (currentEnemies <= EnemiesToSpawn && !waveStarted)
         {
@@ -43,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
                 offset.z = 0;
 
                 offset = offset.normalized * spawnDistance;
-                if(wave%15 == 0 && wave != 0){
+                if(wave%10 == 0 && wave != 0){
                     Instantiate(BossPrefab, transform.position + offset, Quaternion.identity);
                     currentEnemies = EnemiesToSpawn;
                     waveStarted = true;

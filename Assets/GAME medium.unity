@@ -900,6 +900,7 @@ MonoBehaviour:
   BossPrefab: {fileID: 5671101282449121524, guid: c57688c23ec03c146942c527fead97fa, type: 3}
   waveText: {fileID: 1424532200}
   enemiesLeft: {fileID: 397059888}
+  BossKilled: 3
 --- !u!4 &1094193856
 Transform:
   m_ObjectHideFlags: 0

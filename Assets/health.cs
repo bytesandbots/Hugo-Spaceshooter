@@ -30,7 +30,10 @@ public class health : MonoBehaviour
         {
             HealthBar.fillAmount = curenthealth / overallhealth;
         }
-        if (curenthealth <= 0) { 
+        if (curenthealth <= 0) {
+            if (tag == "BOSS") {
+                GameObject.FindFirstObjectByType<EnemySpawner>().BossKilled--;
+            }
             Destroy(gameObject); 
         }
     }
