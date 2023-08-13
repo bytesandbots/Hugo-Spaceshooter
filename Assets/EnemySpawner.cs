@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
                 offset.z = 0;
 
                 offset = offset.normalized * spawnDistance;
-                if(wave%10 == 0 && wave != 0){
+                if(wave%5 == 0 && wave != 0){
                     Instantiate(BossPrefab, transform.position + offset, Quaternion.identity);
                     currentEnemies = EnemiesToSpawn;
                     waveStarted = true;
